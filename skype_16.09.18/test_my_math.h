@@ -1,0 +1,6 @@
+#ifndef TEST_MY_MATH_H_INCLUDED
+#define TEST_MY_MATH_H_INCLUDED
+
+
+
+#endif // TEST_MY_MATH_H_INCLUDED
