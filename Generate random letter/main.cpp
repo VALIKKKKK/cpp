@@ -23,8 +23,8 @@ std::string get_random_string(char first_l, char last_l, int size)
 
 int main()
 {
-    std::string temp = get_random_string(65, 122, 100);
-    std::cout << temp;
+    std::string temp = get_random_string(65, 122, 10);
+    //std::cout << temp << std::endl;
     std::fstream fs("Random Letter.txt", fs.in | fs.out | fs.trunc);
     if(!fs.is_open())
     {
@@ -34,5 +34,22 @@ int main()
     {
         fs << temp;
     }
+    std::fstream fs1("Random Letter1.txt", fs1.in | fs1.out | fs1.app);
+    if(!fs1.is_open())
+    {
+        std::cout << "error";
+    }
+    else
+    {
+
+    }
+    fs.seekp(0);
+    std::string sorted;
+    fs >> sorted;
+    std::cout << sorted << std::endl;
+    std::sort(sorted.begin(), sorted.end());
+    std::cout << sorted << std::endl;
+    fs1.seekp(0);
+    fs1 << sorted;
     return 0;
 }
