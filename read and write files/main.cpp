@@ -9,20 +9,34 @@
 #include <fstream>
 #include "generate_random.h"
 
+void open_and_write(std::string file_name,std::string str)
+{
+    std::ofstream out;
+    out.open(file_name);
+    out << str;
+    out.close();
+}
 
+std::string read(std::string file_name)
+{
+    std::string temp;
+    std::ifstream in;
+    in.open(file_name);
+    in >> temp;
+    in.close();
+    return temp;
+}
 
 int main()
 {
     std::string temp = get_random_string(65, 122, 10);
-    std::ofstream out;
-    out.open("Hell.txt");
-    out << temp;
-    std::cout << temp << std::endl;
-    std::sort(temp.begin(), temp.end());
-    out.close();
-    std::ofstream out1;
-    out1.open("Hell.txt");
-    out1 << temp;
-    std::cout << temp << std::endl;
+    open_and_write("Hell.txt",temp);
+
+    std::string temp1 = read("Hell.txt");
+    std::cout << temp1 << std::endl;
+
+    std::sort(temp1.begin(), temp1.end());
+    open_and_write("Hell.txt",temp1);
+    std::cout << temp1 << std::endl;
     return 0;
 }
