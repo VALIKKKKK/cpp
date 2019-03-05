@@ -29,14 +29,14 @@ struct Fraction
         result.m_denum = common_denum;
         return result;
     }
-    Fraction operator- (const Fraction& that)
+   /* Fraction operator- (const Fraction& that)
     {
         Fraction result;
-        int common_denum = MyMath::lhttps://github.com/VALIKKKKK?tab=repositories(this->m_denum,that.m_denum);
+        int common_denum = MyMath::lhttps:(this->m_denum,that.m_denum);
         result.m_num = this->m_num * (common_denum / m_denum) - that.m_num * (common_denum / that.m_denum);
         result.m_denum = common_denum;
         return result;
-    }
+    }*/
 };
 
 
