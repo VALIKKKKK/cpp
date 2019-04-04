@@ -10,15 +10,15 @@
 int main()
 {
     std::srand(std::time(nullptr));
-    int arr[20] {0};
+    int arr[10] {0};
 
-    random_filling(arr, 20);
+    random_filling(arr, 10);
 
     std::cout << std::endl;
-    print_arr(arr, 20);
+    print_arr(arr, 10);
     std::cout << std::endl;
     auto t1 = std::chrono::high_resolution_clock::now();
-    rand_sort(arr, 20);
+    rand_sort(arr, 10);
     auto t2 = std::chrono::high_resolution_clock::now();
      std::chrono::duration<double, std::milli> ms = t2 - t1;
      std::cout << std::endl;
